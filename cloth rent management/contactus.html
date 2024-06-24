@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+    </style>
+</head>
+<body>
+   
+    <body>
+      <div class="container">
+        <h1>Rent Management System</h1>
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+          <input type="submit" value="Send">
+        </form>
+      </div>
+      <script src="script.js"></script>
+    </body>
+    </html>
+      
+</body>
+<script>
+    const form = document.getElementById("contact-form");
+const name = document.getElementById("name");
+const email = document.getElementById("email");
+const message = document.getElementById("message");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  sendEmail(name.value, email.value, message.value);
+});
+
+function sendEmail(name, email, message) {
+  Email.send({
+    SecureToken: "YourSecureTokenHere",
+    To: "yourEmail@example.com",
+    From: email,
+    Subject: "Contact Form Submission",
+    Body: `Name: ${name} <br/> Email: ${email} <br/> Message: ${message}`,
+  }).then(() => {
+    alert("Message sent successfully!");
+    form.reset();
+  });
+}
+
+</script>
+</html>

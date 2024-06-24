@@ -1,0 +1,81 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 50px;
+    color: rgb(255, 255, 255);
+    height: 800px;
+}
+.container{
+    margin: auto;
+    background-image: url(img3.jpg);
+    background-size: cover;
+    width: 70%;
+    height: 100%;
+    opacity: 0.9;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding-bottom: 50px;
+    z-index: -1;
+    filter: blur(6px);
+  -webkit-filter: blur(0px);
+}
+
+.heading{
+    text-align: center;
+    padding: 10px 10px;
+    margin-top: 100px;
+}
+
+.formdetails{
+    align-items: center;
+    width: 50%;
+    margin: 5px 30px 5px 25%;
+    padding: 2px 10px;
+}
+
+.form{
+    text-align: center;
+    padding: 45px 10pxpx 45px 10px;
+    margin: 80px 10px 80px 10px;
+    
+}
+
+#btn{
+    border-radius: 10px;
+    padding: 5px 8px;
+    margin: 25px 10px;
+    background-color: rgb(240, 240, 240);
+    opacity: 0.5;
+    color: rgb(0, 0, 0);
+}
+
+#btn:hover{
+    opacity: 0.9;
+}
+#rst{
+    border-radius: 10px;
+    padding: 5px 8px;
+    margin: 25px 10px;
+    width: 100px;
+    background-color: rgb(240, 240, 240);
+    opacity: 0.5;
+    color: rgb(0, 0, 0);
+}
+
+#rst:hover{
+    opacity: 0.9;
+}
+
+
+
+input.input-box , textarea{
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    opacity: 0.5;
+}
+
+.formerror{
+    color: red;
+    font-size: 15px;
+    margin: 0px 0px 0px 40px;
+    padding: 0px 0px;
+}

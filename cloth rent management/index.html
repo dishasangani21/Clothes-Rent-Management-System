@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+   
+   
+    <style>
+      *{
+        margin:  10px;
+      }
+         body{
+            background-color: rgb(255, 222, 144);
+            border: 1px solid black;
+            text-align: center;
+        }
+        .container{
+          margin: 20px;
+          padding: 20px;
+          
+         
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  ">Rent Management System </h1>
+    <br>
+   <h2>Log In Form</h2>
+   <br>
+      <form class="form" id="myForm">
+        <div class="formdetails">
+          E-mail: <input class="input-box" type="email" id="email" name="email" value=""><p class="formerror" id="tagemail"></p>
+         </div>
+      <div class="formdetails">
+        Passsword <input class="input-box" type="password" id="password" name="password" value=""><p class="formerror" id="tagpassword"></p>
+    </div>
+     
+    </form>
+    </div>
+      
+      <button onclick="validate();  " id="btn" >log in</button>
+   
+      <br><br>
+    <a href="create.html">Don't have a account?Create new?</a>
+    <br><br>
+ 
+
+</body>
+<script>
+  
+
+
+
+
+  //  document.getElementById("btn").addEventListener("click",home)
+ 
+  function validate(){
+    let returnval = true;
+    let email = document.getElementById('email');
+    let emaila = document.getElementById("email").value;
+    let password = document.getElementById('password');
+   
+    let passa = document.getElementById("password").value;
+    
+    // const collection = document.getElementsByClassName("formerror");
+    // for (let i = 0; i < collection.length; i++) {
+    //     collection[i].innerHTML = "";
+    // }
+
+      // email validation
+      if (email.value == "") {
+        document.getElementById("tagemail").innerHTML = "blank space";
+        returnval = false;
+    }
+    if(emaila.indexOf('@')<=0){
+        document.getElementById("tagemail").innerHTML = "invalid @ position";
+        returnval = false;
+    }
+    if(emaila.charAt(emaila.length-4)!="." && emaila.charAt(emaild.length-3)!="."){
+        document.getElementById("tagemail").innerHTML = "invalid domain name";
+        returnval = false;
+    }
+     // password validation
+    if(password.value == "") {
+        document.getElementById("tagpassword").innerHTML = "blank space";
+        returnval = false;
+    }
+    if(returnval!=false){
+      window.location.href='rentmanagement.html';
+    }
+  }
+  // function home(){
+  //   window.location.href='rentmanagement.html';
+  // }
+ 
+ </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</html>

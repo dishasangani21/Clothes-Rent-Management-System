@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Upload Example</title>
+    <style>
+       .mainn {
+        margin: 10px;
+        padding: 20px;
+            border: 2px solid black;
+            text-align: center;
+            background-image: url(/image/upload.jpeg);
+        }
+        
+    </style>
+  </head>
+  <body>
+    
+    <form class="mainn">
+        <h1>Image Upload Example</h1>
+        <br>
+      <input type="file" id="fileInput">
+      <button type="button" onclick="uploadImage()">Upload</button>
+    </form>
+    <script>
+      function uploadImage() {
+        const fileInput = document.getElementById('fileInput');
+        const file = fileInput.files[0];
+        const formData = new FormData();
+        formData.append('image', file);
+        
+        fetch('/upload', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Image uploaded successfully!');
+          } else {
+            alert('Image upload failed.');
+          }
+        })
+        .catch(error => {
+          console.error('Error uploading image:', error);
+        });
+      }
+    </script>
+  </body>
+</html>

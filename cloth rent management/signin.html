@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+        margin-left:  20px;
+      }
+        body{
+            background-color: rgb(216, 243, 234);
+        }
+        .box{
+            padding: 10%;
+            border: 2px solid black;
+            /* width: 100vh; */
+            text-align: center;
+            width: 70%;
+            height: 100%;
+        }
+        .submit{
+            background-color: orange;
+            color: black;
+        }
+    </style>
+</head>
+<body >
+   
+    <div class="box" >
+        <h1 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  ">Rent Management System </h1>
+        <h2>Sign In Page</h2>
+        
+        Mobile Number:<input type="text" id="mobile" name="mobile"><p class="formerror" id="tagmobile"></p>
+        <br> 
+        <div class="formdetails">
+            Passsword:   <input class="input-box" type="password" id="password" name="password" value=""><p class="formerror" id="tagpassword"></p>
+        </div>
+        <br>
+        <button class="submit" onclick="return validate()">Continue</button>
+        <br>
+        <p style="font-size: 10px;">By continuing, you agree to our's Conditions of Use and Privacy Notice.</p>
+        <a href="about.html" style="font-size: 9px;">Need Help?</a>
+        
+        <br>
+    </div>
+   
+</body>
+<script>
+    function validate(){
+
+        let returnval = true;
+        let mobile = document.getElementById('mobile');
+        let mobilea = document.getElementById("mobile").value;
+
+        if (mobile.value == "") {
+        document.getElementById("tagmobile").innerHTML = "blank space";
+        returnval = false;
+    }
+    if(isNaN(mobilea)){
+        document.getElementById("tagmobile").innerHTML = "only digit are allowed";
+        returnval = false;
+    }
+    if(mobilea.length>10 || mobilea.length<10){
+        document.getElementById("tagmobile").innerHTML = "number should be 10 digits";
+        returnval = false;
+    }
+    }
+</script>
+</html>
